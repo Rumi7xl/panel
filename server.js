@@ -1,4 +1,5 @@
 console.log("SERVER DOSYASI OKUNDU");
+
 const express = require("express");
 const cors = require("cors");
 
@@ -70,8 +71,4 @@ app.listen(PORT, () => {
 
     console.log(`RUMİ7XL PANEL API Çalışıyor 🚀 Port: ${PORT}`);
 
-});
-
-app.get("/test", (req,res)=>{
-    res.send("TEST ÇALIŞIYOR");
 });
