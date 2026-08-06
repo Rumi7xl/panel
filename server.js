@@ -1,3 +1,4 @@
+console.log("SERVER DOSYASI OKUNDU");
 const express = require("express");
 const cors = require("cors");
 
