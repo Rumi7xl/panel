@@ -36,9 +36,16 @@ app.get("/api/stats",(req,res)=>{
             owner:"Bercan Yakar"
         },
 
+
         kick:{
             followers:12458,
             subscribers:325,
+
+            // YENİ EKLEDİKLERİMİZ
+            live:true,
+            viewers:356,
+            category:"GTA V",
+            title:"RUMİ7XL Canlı Yayın 🚀",
 
             latestFollowers:[
                 "Yeni Takipçi 1",
