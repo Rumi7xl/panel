@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>RUMİ7XL PANEL</title>
+
+<style>
+
+body{
+    background:#0b0b0f;
+    color:white;
+    font-family:Arial;
+}
+
+.container{
+    width:900px;
+    margin:auto;
+}
+
+.card{
+
+    background:#171720;
+    padding:20px;
+    margin:15px;
+    border-radius:15px;
+
+}
+
+h1{
+    color:#9b5cff;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+<h1>🚀 RUMİ7XL PANEL</h1>
+
+
+<div class="card">
+
+<h2>Profil</h2>
+
+<p id="profile"></p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>Kick 🟢</h2>
+
+<p id="kick"></p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>YouTube 🔴</h2>
+
+<p id="youtube"></p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>TikTok ⚫</h2>
+
+<p id="tiktok"></p>
+
+</div>
+
+
+
+</div>
+
+
+
+<script>
+
+
+fetch("https://panel-ao8e.onrender.com/api/stats")
+
+.then(res=>res.json())
+
+.then(data=>{
+
+
+document.getElementById("profile").innerHTML =
+data.profile.name + "<br>" +
+data.profile.owner;
+
+
+
+document.getElementById("kick").innerHTML =
+"Takipçi: " + data.kick.followers +
+"<br>Abone: " + data.kick.subscribers;
+
+
+
+document.getElementById("youtube").innerHTML =
+"Abone: " + data.youtube.subscribers;
+
+
+
+document.getElementById("tiktok").innerHTML =
+"Takipçi: " + data.tiktok.followers;
+
+
+
+});
+
+
+</script>
+
+
+</body>
+</html>
