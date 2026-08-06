@@ -71,3 +71,7 @@ app.listen(PORT, () => {
     console.log(`RUMİ7XL PANEL API Çalışıyor 🚀 Port: ${PORT}`);
 
 });
+
+app.get("/test", (req,res)=>{
+    res.send("TEST ÇALIŞIYOR");
+});
