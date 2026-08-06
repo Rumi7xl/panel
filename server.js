@@ -3,38 +3,44 @@ console.log("SERVER DOSYASI OKUNDU");
 const express = require("express");
 const cors = require("cors");
 
+const path = require("path");
+
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
 
-// ANA TEST
-app.get("/", (req, res) => {
-    res.send("RUMİ7XL PANEL API Aktif 🚀");
+// HTML PANELİ GÖSTER
+app.use(express.static(__dirname));
+
+
+// ANA SAYFA
+app.get("/", (req,res)=>{
+    res.sendFile(path.join(__dirname,"index.html"));
 });
 
 
-// TEST ROUTE
-app.get("/test", (req, res) => {
+// API TEST
+app.get("/test",(req,res)=>{
     res.send("TEST ÇALIŞIYOR 🚀");
 });
 
 
 // PANEL VERİLERİ
-app.get("/api/stats", (req, res) => {
+app.get("/api/stats",(req,res)=>{
 
     res.json({
 
-        profile: {
-            name: "RUMİ7XL",
-            owner: "Bercan Yakar"
+        profile:{
+            name:"RUMİ7XL",
+            owner:"Bercan Yakar"
         },
 
-        kick: {
-            followers: 12458,
-            subscribers: 325,
-            latestFollowers: [
+        kick:{
+            followers:12458,
+            subscribers:325,
+            latestFollowers:[
                 "Yeni Takipçi 1",
                 "Yeni Takipçi 2",
                 "Yeni Takipçi 3",
@@ -43,20 +49,21 @@ app.get("/api/stats", (req, res) => {
             ]
         },
 
-        youtube: {
-            subscribers: 5420
+        youtube:{
+            subscribers:5420
         },
 
-        tiktok: {
-            followers: 25800
+        tiktok:{
+            followers:25800
         },
 
-        instagram: {
-            followers: 0
+        instagram:{
+            followers:0
         },
 
-        status: "online",
-        lastUpdate: new Date()
+        status:"online",
+
+        lastUpdate:new Date()
 
     });
 
@@ -67,8 +74,8 @@ app.get("/api/stats", (req, res) => {
 const PORT = process.env.PORT || 10000;
 
 
-app.listen(PORT, () => {
+app.listen(PORT,()=>{
 
-    console.log(`RUMİ7XL PANEL API Çalışıyor 🚀 Port: ${PORT}`);
+console.log(`RUMİ7XL PANEL API Çalışıyor 🚀 Port: ${PORT}`);
 
 });
